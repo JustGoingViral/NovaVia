@@ -3,7 +3,6 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
-![License](https://img.shields.io/badge/license-MIT-yellow)
 ![HIPAA](https://img.shields.io/badge/HIPAA-compliant-red)
 
 Revolutionary AI-powered addiction recovery platform utilizing quantum physics principles for neuroplasticity enhancement with **millisecond precision** device coordination.
