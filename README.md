@@ -1,6 +1,12 @@
 # 🌟 NOVA ViA: Transforming Lives Through AI-Powered Neuroplasticity
 
+<<<<<<< HEAD
 > *"Every brain has the potential to heal. Every person deserves a second chance. NOVA ViA makes both possible."*
+=======
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Python](https://img.shields.io/badge/python-3.11+-green)
+![HIPAA](https://img.shields.io/badge/HIPAA-compliant-red)
+>>>>>>> d88c1aac54c7efdaf22f6908a739cb02c4f47db8
 
 ![NOVA ViA Hero](https://img.shields.io/badge/NOVA%20ViA-Transforming%20Lives-blue?style=for-the-badge)
 ![AI Powered](https://img.shields.io/badge/AI%20Powered-Neuroplasticity-green?style=for-the-badge)
