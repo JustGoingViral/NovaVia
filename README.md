@@ -1,12 +1,10 @@
 # 🌟 NOVA ViA: Transforming Lives Through AI-Powered Neuroplasticity
 
-<<<<<<< HEAD
-> *"Every brain has the potential to heal. Every person deserves a second chance. NOVA ViA makes both possible."*
 =======
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![HIPAA](https://img.shields.io/badge/HIPAA-compliant-red)
->>>>>>> d88c1aac54c7efdaf22f6908a739cb02c4f47db8
+
 
 ![NOVA ViA Hero](https://img.shields.io/badge/NOVA%20ViA-Transforming%20Lives-blue?style=for-the-badge)
 ![AI Powered](https://img.shields.io/badge/AI%20Powered-Neuroplasticity-green?style=for-the-badge)
@@ -293,17 +291,6 @@ class BiohackingAgent:
 
 ---
 
-## 🌍 **Join the Revolution: Getting Involved**
-
-### **For Patients & Families**
-- **🏥 Find a Center:** [NOVA ViA Locations](https://novavia.com/locations)
-- **📞 24/7 Helpline:** 1-800-NOVA-VIA (1-800-668-2842)
-- **💬 Support Community:** [patients.novavia.com](https://patients.novavia.com)
-
-### **For Medical Professionals**
-- **🎓 Training Programs:** Certification in NOVA ViA protocols
-- **🔬 Research Collaboration:** Join our clinical trials
-- **📚 Continuing Education:** Stay at the forefront of addiction medicine
 
 ### **For Developers & Researchers**
 ```bash
@@ -369,28 +356,6 @@ python -m pytest tests/test_neuroplasticity.py::test_hope_generation
 - **NIH HEAL Initiative** - $50M research grant
 - **Gates Foundation** - Global health access funding
 - **Schmidt Futures** - AI for social good initiative
-
----
-
-## 📞 **Get Help Now**
-
-### **🚨 Crisis Support (24/7)**
-- **Crisis Hotline:** 988 (Suicide & Crisis Lifeline)
-- **NOVA ViA Emergency:** 1-800-NOVA-911
-- **Text Support:** Text "HOPE" to 741741
-
-### **📧 General Information**
-- **Patient Inquiries:** patients@novavia.com
-- **Medical Professionals:** doctors@novavia.com
-- **Investors & Partners:** partners@novavia.com
-- **Media & Press:** press@novavia.com
-
-### **🏥 Treatment Centers**
-- **Los Angeles, CA** - 310-NOVA-VIA
-- **Austin, TX** - 512-NOVA-VIA
-- **Miami, FL** - 305-NOVA-VIA
-- **New York, NY** - 212-NOVA-VIA
-
 ---
 
 ## 🏆 **Recognition & Awards**
@@ -407,14 +372,7 @@ python -m pytest tests/test_neuroplasticity.py::test_hope_generation
 - **Joint Commission Accreditation** - Highest safety standards
 - **SAMHSA Recognition** - Model program for national replication
 
----
 
-## 📄 **Legal & Compliance**
-
-### **Medical Disclaimer**
-NOVA ViA treatments are provided by licensed medical professionals in accredited facilities. Individual results may vary. This platform is for informational purposes and does not replace professional medical advice.
-
-### **Open Source License**
 ```
 MIT License - Freedom to Heal
 
