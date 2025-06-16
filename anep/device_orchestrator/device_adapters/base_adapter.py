@@ -26,15 +26,22 @@ class DeviceStatus(Enum):
 
 
 class DeviceCapability(Enum):
-    """Device capability types"""
+    """Device capability enumeration"""
     PRESSURE_CONTROL = "pressure_control"
+    TEMPERATURE_CONTROL = "temperature_control"
     LIGHT_THERAPY = "light_therapy"
     MAGNETIC_FIELD = "magnetic_field"
     FREQUENCY_GENERATION = "frequency_generation"
-    TEMPERATURE_CONTROL = "temperature_control"
     REAL_TIME_MONITORING = "real_time_monitoring"
     SAFETY_SHUTOFF = "safety_shutoff"
     AUTOMATED_CALIBRATION = "automated_calibration"
+    NEUROFEEDBACK = "neurofeedback"
+    AUDIO_THERAPY = "audio_therapy"
+    VIBRATIONAL_FEEDBACK = "vibrational_feedback"
+    EEG_INTEGRATION = "eeg_integration"
+    STEM_CELL_THERAPY = "stem_cell_therapy"
+    NEURAL_REGENERATION = "neural_regeneration"
+    PEPTIDE_DELIVERY = "peptide_delivery"
 
 
 @dataclass
