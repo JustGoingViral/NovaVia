@@ -296,7 +296,8 @@ async def websocket_predictions(websocket, patient_id: str):
             await asyncio.sleep(30)  # Send predictions every 30 seconds
             
     except Exception as e:
-        logging.error(f"WebSocket prediction error for patient {patient_id}: {e}")
+        sanitized_patient_id = patient_id.replace('\r\n', '').replace('\n', '')
+        logging.error(f"WebSocket prediction error for patient {sanitized_patient_id}: {e}")
     finally:
         await websocket.close()
 
