@@ -45,7 +45,7 @@ plotly==5.17.0
 # Security & Compliance
 cryptography==41.0.8
 passlib[bcrypt]==1.7.4
-python-jose[cryptography]==3.3.0
+python-jose[cryptography]==3.4.0
 python-multipart==0.0.6
 
 # Cloud & Infrastructure
