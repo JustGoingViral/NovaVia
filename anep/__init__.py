@@ -7,15 +7,12 @@ Core module for EEG processing, neuroplasticity prediction, and device orchestra
 __version__ = "1.0.0"
 __author__ = "NOVA ViA Systems"
 
-from anep.device_orchestrator.device_manager import DeviceOrchestrator, TreatmentProtocol
-from anep.eeg_processor.pattern_analyzer import NeuroplasticityPatternAnalyzer
-from anep.eeg_processor.neuroplasticity_predictor import NeuroplasticityPredictor
-from anep.eeg_processor.stream_processor import EEGStreamProcessor
+# Import classes only when explicitly requested to avoid dependency issues
+# Users should import directly from submodules:
+# from anep.device_orchestrator.device_manager import DeviceOrchestrator
+# from anep.eeg_processor.pattern_analyzer import NeuroplasticityPatternAnalyzer
 
 __all__ = [
-    "DeviceOrchestrator",
-    "TreatmentProtocol",
-    "NeuroplasticityPatternAnalyzer",
-    "NeuroplasticityPredictor",
-    "EEGStreamProcessor",
+    "device_orchestrator",
+    "eeg_processor",
 ]
