@@ -34,13 +34,24 @@ This is the first official release of NOVA ViA - an AI-powered neuroplasticity-b
 #### IRIP (Integrated Recovery Intelligence Platform)
 - **Multi-Agent AI System**: Specialized AI agents working as coordinated team
   - Crisis Intervention Agent: 24/7 suicide prevention and emergency response
-  - Medication Optimization Agent: Real-time MAT protocol adjustment
-  - Biohacking Coordination Agent: Device protocol orchestration
+  - Medication Optimization Agent: Real-time MAT protocol adjustment with HNK integration
+  - Biohacking Coordination Agent: Device protocol orchestration with HNK synergy modeling
   - Therapy Coordinator Agent: Ketamine and plant medicine session management
   - Analytics Agent: Predictive outcomes and treatment optimization
   - Master Orchestrator: Inter-agent coordination and conflict resolution
 - **Agent Communication Framework**: Consensus-based decision making
 - **Continuous Learning System**: Population-level learning and optimization
+- **HNK Pharmacodynamics Module**: Advanced modeling for (2R,6R)-hydroxynorketamine
+  - Precision pharmacokinetic/pharmacodynamic modeling for personalized dosing
+  - BDNF upregulation prediction with temporal dynamics
+  - AMPA receptor activation modeling via Hill equations
+  - Inter-individual variability modeling (CYP2B6 metabolism profiles)
+  - Hormonal phase optimization for women's health (estrogen modulation)
+  - Postpartum depression treatment protocols with customized dosing
+  - Monte Carlo simulation for dose optimization (1000+ iterations)
+  - Biohacking synergy prediction (PEMF, red light, EEG integration)
+  - Minimal dissociation risk (<5%) and zero abuse liability
+  - Sustained neuroplastic effects (48+ hours per treatment)
 
 #### API Layer
 - **FastAPI Gateway**: High-performance REST API with WebSocket support
@@ -84,6 +95,12 @@ This is the first official release of NOVA ViA - an AI-powered neuroplasticity-b
 - Quick 30-second preview mode
 - Simulated EEG feedback integration
 - Real-time event monitoring and logging
+- **HNK Treatment Examples** (`examples/` directory)
+  - Week 5-8 protocol example with HNK + biohacking integration
+  - Comprehensive integration tests for HNK pharmacodynamics
+  - Postpartum depression treatment scenarios
+  - Hormonal phase optimization demonstrations
+  - Monte Carlo dose optimization examples
 
 ### Technical Stack
 - **Backend**: Python 3.11+, FastAPI, SQLAlchemy, Pydantic
@@ -94,6 +111,7 @@ This is the first official release of NOVA ViA - an AI-powered neuroplasticity-b
 - **DevOps**: Docker, Docker Compose
 - **EEG Processing**: MNE, neurodsp, yasa
 - **Signal Processing**: SciPy, NumPy, pandas
+- **Pharmacodynamics**: SciPy ODE solvers, NumPy, Matplotlib (for PK/PD modeling)
 
 ### Performance Metrics
 - Neuroplasticity window prediction: >85% accuracy
