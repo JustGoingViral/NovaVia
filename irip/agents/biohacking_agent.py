@@ -1109,14 +1109,16 @@ class BiohackingAgent(BaseAgent):
         # Cap total synergy at 80% to maintain biological realism
         synergy_factor = min(synergy_factor, 0.80)
         
+        # Initialize HNK agent once for efficiency (avoid recreating in ODE loop)
+        hnk_agent = HNKPharmacodynamicsAgent()
+        
         def bdnf_synergy_ode(bdnf: float, time: float) -> float:
             """
             Enhanced BDNF differential equation with synergy
             
             d[BDNF]/dt = k1*[HNK]*(1 + synergy) - k2*[BDNF]
             """
-            # Get HNK concentration at current time
-            hnk_agent = HNKPharmacodynamicsAgent()
+            # Get HNK concentration at current time (using pre-initialized agent)
             hnk_conc = hnk_agent.calculate_plasma_concentration(hnk_dose_mg_kg, time, patient)
             
             # Production rate with hormonal and synergy modifiers

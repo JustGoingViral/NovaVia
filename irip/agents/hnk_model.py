@@ -18,10 +18,10 @@ References:
 import numpy as np
 import json
 import logging
+import random
 from typing import Dict, Any, List, Optional, Tuple
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from scipy.integrate import odeint
-from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 from enum import Enum
 
@@ -362,7 +362,7 @@ class HNKPharmacodynamicsAgent:
                 body_weight_kg=np.random.normal(base_patient.body_weight_kg, 10),
                 age_years=base_patient.age_years,
                 sex=base_patient.sex,
-                metabolism_profile=np.random.choice(list(MetabolismProfile)),
+                metabolism_profile=random.choice(list(MetabolismProfile)),
                 hormonal_phase=base_patient.hormonal_phase,
                 baseline_bdnf_ng_ml=np.random.normal(base_patient.baseline_bdnf_ng_ml, 3),
                 depression_severity_score=base_patient.depression_severity_score,

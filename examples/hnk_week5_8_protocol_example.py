@@ -9,6 +9,7 @@ intensive neuroplasticity phase (Weeks 5-8) of addiction recovery treatment.
 import json
 import sys
 import os
+import tempfile
 
 # Add parent directory to path to import modules
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'irip', 'agents'))
@@ -172,8 +173,8 @@ def example_3_full_treatment_protocol():
         print(f"  Recommendations: {protocol['hormonal_considerations']['recommendations']}")
         print()
     
-    # Export to JSON for IRIP integration
-    output_file = "/tmp/hnk_protocol_week5_8.json"
+    # Export to JSON for IRIP integration (cross-platform temp directory)
+    output_file = os.path.join(tempfile.gettempdir(), "hnk_protocol_week5_8.json")
     hnk_agent.export_to_json(protocol, output_file)
     print(f"✓ Full protocol exported to: {output_file}")
     print()
@@ -208,8 +209,8 @@ def example_4_dose_response_visualization():
     print("  - Safety profile (dissociation risk)")
     print()
     
-    # Generate and save curves
-    output_path = "/tmp/hnk_dose_response_curves.png"
+    # Generate and save curves (cross-platform temp directory)
+    output_path = os.path.join(tempfile.gettempdir(), "hnk_dose_response_curves.png")
     hnk_agent.plot_dose_response_curves(patient, output_path=output_path)
     
     print(f"✓ Dose-response curves saved to: {output_path}")
@@ -276,8 +277,8 @@ def example_5_json_irip_integration():
     print(json.dumps(irip_output, indent=2))
     print()
     
-    # Save to file
-    output_file = "/tmp/hnk_irip_output.json"
+    # Save to file (cross-platform temp directory)
+    output_file = os.path.join(tempfile.gettempdir(), "hnk_irip_output.json")
     hnk_agent.export_to_json(irip_output, output_file)
     print(f"✓ IRIP output exported to: {output_file}")
     print()
@@ -319,7 +320,7 @@ def main():
         print("=" * 80)
         print()
         print("Next Steps:")
-        print("  1. Review generated JSON files in /tmp/")
+        print(f"  1. Review generated JSON files in {tempfile.gettempdir()}")
         print("  2. Examine dose-response curves visualization")
         print("  3. Integrate with IRIP medication and biohacking agents")
         print("  4. Deploy in clinical setting with proper monitoring")

@@ -1126,7 +1126,11 @@ class MedicationAgent(BaseAgent):
         optimal_dose = optimal_result["optimal_dose_mg_kg"]
         
         # Check if dose adjustment is significant (>10% change)
-        dose_change_percent = abs(optimal_dose - current_dose) / current_dose * 100
+        # Guard against division by zero
+        if current_dose < 0.01:  # Treat as new prescription
+            dose_change_percent = 100.0  # Always recommend if no current dose
+        else:
+            dose_change_percent = abs(optimal_dose - current_dose) / current_dose * 100
         
         if dose_change_percent > 10:
             return DosageRecommendation(

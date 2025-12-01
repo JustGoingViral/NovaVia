@@ -6,6 +6,7 @@ Verifies that HNK model integrates correctly with medication and biohacking agen
 import sys
 import os
 import json
+import tempfile
 
 # Add parent directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'irip', 'agents'))
@@ -184,8 +185,8 @@ def test_json_export():
             "optimal_dose_mgkg": result["optimal_dose_mg_kg"]
         }
         
-        # Export to JSON
-        output_file = "/tmp/test_hnk_irip_output.json"
+        # Export to JSON (cross-platform temp directory)
+        output_file = os.path.join(tempfile.gettempdir(), "test_hnk_irip_output.json")
         agent.export_to_json(irip_output, output_file)
         
         # Verify file exists and is valid JSON
