@@ -1,6 +1,9 @@
 """
 IRIP Biohacking Agent
 AI-driven coordination of biohacking devices and neuroplasticity enhancement protocols
+
+Extended with HNK (Hydroxynorketamine) synergy modeling for enhanced
+synaptic plasticity through coordinated PEMF, EEG, and therapeutic device integration.
 """
 
 import asyncio
@@ -11,10 +14,16 @@ from dataclasses import dataclass
 from enum import Enum
 import json
 import math
+import numpy as np
+from scipy.integrate import odeint
 
 from .base_agent import (
     BaseAgent, AgentMessage, PatientContext, AgentCapability,
     AgentPriority, AgentState
+)
+from .hnk_model import (
+    HNKPharmacodynamicsAgent, PatientCovariates, 
+    HormonalPhase, MetabolismProfile
 )
 
 
@@ -993,6 +1002,332 @@ class BiohackingAgent(BaseAgent):
         """Optimize device parameters for patient-specific needs"""
         # Would implement parameter optimization algorithm
         return protocol
+    
+    # HNK Synergy Integration Methods
+    async def predict_hnk_synergy(self, patient_id: str, hnk_dose_mg_kg: float,
+                                 biohacking_devices: List[DeviceType]) -> Dict[str, Any]:
+        """
+        Predict synergistic effects of HNK with biohacking devices
+        
+        Simulates enhanced synaptic plasticity through coordinated BDNF upregulation,
+        PEMF-induced neuroplasticity, and EEG-guided optimization.
+        
+        Args:
+            patient_id: Patient identifier
+            hnk_dose_mg_kg: HNK dose in mg/kg
+            biohacking_devices: List of biohacking devices to coordinate
+            
+        Returns:
+            Dictionary with predicted synergy scores and BDNF dynamics
+        """
+        # Get patient context
+        patient_context = self.get_patient_context(patient_id)
+        if not patient_context:
+            return {"success": False, "error": "Patient context not available"}
+        
+        # Initialize HNK agent for pharmacodynamic modeling
+        hnk_agent = HNKPharmacodynamicsAgent()
+        
+        # Create patient covariates
+        patient_covariates = self._create_patient_covariates(patient_context)
+        
+        # Simulate BDNF dynamics with HNK alone
+        t_hours = np.linspace(0, 48, 200)
+        bdnf_hnk_only = hnk_agent.bdnf_dynamics_model(t_hours, hnk_dose_mg_kg, patient_covariates)
+        
+        # Calculate synergy with biohacking devices
+        bdnf_with_synergy = self._simulate_bdnf_with_biohacking_synergy(
+            t_hours, hnk_dose_mg_kg, patient_covariates, biohacking_devices
+        )
+        
+        # Calculate enhancement metrics
+        max_bdnf_hnk_only = np.max(bdnf_hnk_only)
+        max_bdnf_with_synergy = np.max(bdnf_with_synergy)
+        synergy_enhancement = (max_bdnf_with_synergy - max_bdnf_hnk_only) / max_bdnf_hnk_only * 100
+        
+        # Calculate area under curve (total BDNF exposure)
+        auc_hnk_only = np.trapz(bdnf_hnk_only, t_hours)
+        auc_with_synergy = np.trapz(bdnf_with_synergy, t_hours)
+        total_enhancement = (auc_with_synergy - auc_hnk_only) / auc_hnk_only * 100
+        
+        return {
+            "success": True,
+            "patient_id": patient_id,
+            "hnk_dose_mg_kg": hnk_dose_mg_kg,
+            "biohacking_devices": [d.value for d in biohacking_devices],
+            "bdnf_enhancement": {
+                "peak_increase_percent": round(synergy_enhancement, 1),
+                "total_exposure_increase_percent": round(total_enhancement, 1),
+                "max_bdnf_hnk_only_ng_ml": round(float(max_bdnf_hnk_only), 2),
+                "max_bdnf_with_synergy_ng_ml": round(float(max_bdnf_with_synergy), 2),
+                "baseline_bdnf_ng_ml": patient_covariates.baseline_bdnf_ng_ml
+            },
+            "predicted_plasticity_score": min(1.0, synergy_enhancement / 100.0 + 0.3),
+            "optimal_device_timing": self._calculate_optimal_device_timing(t_hours, bdnf_with_synergy),
+            "neuroplasticity_window_duration_hours": self._estimate_neuroplasticity_window(bdnf_with_synergy, t_hours)
+        }
+    
+    def _simulate_bdnf_with_biohacking_synergy(self, t_hours: np.ndarray, 
+                                               hnk_dose_mg_kg: float,
+                                               patient: PatientCovariates,
+                                               devices: List[DeviceType]) -> np.ndarray:
+        """
+        Simulate BDNF dynamics with HNK and biohacking device synergy
+        
+        Uses enhanced differential equation model:
+        d[BDNF]/dt = k1*[HNK]*(1 + synergy_factor) - k2*[BDNF]
+        
+        Where synergy_factor accounts for:
+        - PEMF: Enhanced neuroplasticity through magnetic field stimulation
+        - Red Light: Mitochondrial enhancement and cellular energy
+        - EEG Monitoring: Optimized timing during high-plasticity states
+        
+        Args:
+            t_hours: Time array
+            hnk_dose_mg_kg: HNK dose
+            patient: Patient covariates
+            devices: Biohacking devices
+            
+        Returns:
+            BDNF concentration array with synergy effects
+        """
+        # Calculate synergy factors for each device type
+        synergy_factor = 0.0
+        
+        for device in devices:
+            if device == DeviceType.PEMF:
+                synergy_factor += 0.25  # 25% enhancement from PEMF
+            elif device == DeviceType.RED_LIGHT_THERAPY:
+                synergy_factor += 0.15  # 15% enhancement from red light
+            elif device == DeviceType.BRAINTAP:
+                synergy_factor += 0.20  # 20% enhancement from brainwave entrainment
+            elif device == DeviceType.NEUROGEN:
+                synergy_factor += 0.18  # 18% enhancement from transcranial stimulation
+            elif device == DeviceType.FREQUENCY_THERAPY:
+                synergy_factor += 0.12  # 12% enhancement from frequency therapy
+        
+        # Cap total synergy at 80% to maintain biological realism
+        synergy_factor = min(synergy_factor, 0.80)
+        
+        # Initialize HNK agent once for efficiency (avoid recreating in ODE loop)
+        hnk_agent = HNKPharmacodynamicsAgent()
+        
+        def bdnf_synergy_ode(bdnf: float, time: float) -> float:
+            """
+            Enhanced BDNF differential equation with synergy
+            
+            d[BDNF]/dt = k1*[HNK]*(1 + synergy) - k2*[BDNF]
+            """
+            # Get HNK concentration at current time (using pre-initialized agent)
+            hnk_conc = hnk_agent.calculate_plasma_concentration(hnk_dose_mg_kg, time, patient)
+            
+            # Production rate with hormonal and synergy modifiers
+            k1 = 0.5 * patient.get_hormonal_efficacy_modifier() * (1 + synergy_factor)
+            
+            # Degradation rate
+            k2 = 0.02
+            
+            # Rate of BDNF change
+            d_bdnf_dt = k1 * hnk_conc - k2 * bdnf
+            
+            return d_bdnf_dt
+        
+        # Initial condition: baseline BDNF
+        bdnf0 = patient.baseline_bdnf_ng_ml
+        
+        # Solve ODE
+        bdnf_levels = odeint(bdnf_synergy_ode, bdnf0, t_hours)
+        
+        return bdnf_levels.flatten()
+    
+    def _create_patient_covariates(self, patient_context: PatientContext) -> PatientCovariates:
+        """
+        Create PatientCovariates from PatientContext
+        
+        Args:
+            patient_context: IRIP patient context
+            
+        Returns:
+            PatientCovariates for HNK modeling
+        """
+        vitals = patient_context.current_vitals or {}
+        
+        # Attempt to extract hormonal phase
+        hormonal_phase = None
+        if hasattr(patient_context, 'hormonal_phase'):
+            try:
+                hormonal_phase = HormonalPhase(patient_context.hormonal_phase)
+            except (ValueError, AttributeError):
+                hormonal_phase = None
+        
+        return PatientCovariates(
+            body_weight_kg=vitals.get("weight_kg", 70.0),
+            age_years=vitals.get("age", 35),
+            sex=vitals.get("sex", "female"),
+            metabolism_profile=MetabolismProfile.NORMAL,
+            hormonal_phase=hormonal_phase,
+            baseline_bdnf_ng_ml=vitals.get("bdnf_ng_ml", 15.0),
+            depression_severity_score=patient_context.severity_score,
+            liver_function_percent=vitals.get("liver_function_percent", 100.0),
+            renal_function_ml_min=vitals.get("renal_function_ml_min", 90.0)
+        )
+    
+    def _calculate_optimal_device_timing(self, t_hours: np.ndarray, 
+                                        bdnf_levels: np.ndarray) -> Dict[str, Any]:
+        """
+        Calculate optimal timing for device activation based on BDNF dynamics
+        
+        Args:
+            t_hours: Time array
+            bdnf_levels: BDNF concentration array
+            
+        Returns:
+            Dictionary with optimal timing recommendations
+        """
+        # Find peak BDNF time
+        peak_idx = np.argmax(bdnf_levels)
+        peak_time = t_hours[peak_idx]
+        
+        # Find times when BDNF is >50% of peak (high plasticity window)
+        peak_bdnf = bdnf_levels[peak_idx]
+        high_plasticity_threshold = peak_bdnf * 0.5
+        high_plasticity_indices = np.where(bdnf_levels >= high_plasticity_threshold)[0]
+        
+        if len(high_plasticity_indices) > 0:
+            window_start = t_hours[high_plasticity_indices[0]]
+            window_end = t_hours[high_plasticity_indices[-1]]
+            window_duration = window_end - window_start
+        else:
+            window_start = peak_time
+            window_end = peak_time
+            window_duration = 0
+        
+        return {
+            "peak_bdnf_time_hours": round(float(peak_time), 1),
+            "high_plasticity_window_start_hours": round(float(window_start), 1),
+            "high_plasticity_window_end_hours": round(float(window_end), 1),
+            "window_duration_hours": round(float(window_duration), 1),
+            "recommended_pemf_timing": "30_minutes_post_hnk_infusion",
+            "recommended_eeg_monitoring": "continuous_for_first_4_hours",
+            "recommended_red_light": "concurrent_with_infusion_and_2hrs_post"
+        }
+    
+    def _estimate_neuroplasticity_window(self, bdnf_levels: np.ndarray, 
+                                        t_hours: np.ndarray) -> float:
+        """
+        Estimate duration of enhanced neuroplasticity window
+        
+        Args:
+            bdnf_levels: BDNF concentration array
+            t_hours: Time array
+            
+        Returns:
+            Duration in hours
+        """
+        # Calculate baseline (initial value)
+        baseline = bdnf_levels[0]
+        
+        # Find times when BDNF is >25% above baseline
+        threshold = baseline * 1.25
+        enhanced_indices = np.where(bdnf_levels >= threshold)[0]
+        
+        if len(enhanced_indices) > 0:
+            duration = t_hours[enhanced_indices[-1]] - t_hours[enhanced_indices[0]]
+            return round(float(duration), 1)
+        else:
+            return 0.0
+    
+    async def generate_hnk_biohacking_protocol(self, patient_id: str,
+                                              hnk_dose_mg_kg: float) -> Dict[str, Any]:
+        """
+        Generate integrated HNK + biohacking protocol
+        
+        Creates optimized protocol that coordinates HNK infusion with biohacking
+        devices for maximum neuroplasticity enhancement.
+        
+        Args:
+            patient_id: Patient identifier
+            hnk_dose_mg_kg: HNK dose in mg/kg
+            
+        Returns:
+            Complete integrated protocol
+        """
+        # Optimal devices for HNK synergy
+        optimal_devices = [
+            DeviceType.PEMF,
+            DeviceType.RED_LIGHT_THERAPY,
+            DeviceType.BRAINTAP,
+            DeviceType.NEUROGEN
+        ]
+        
+        # Predict synergy
+        synergy_result = await self.predict_hnk_synergy(patient_id, hnk_dose_mg_kg, optimal_devices)
+        
+        if not synergy_result.get("success"):
+            return synergy_result
+        
+        # Generate coordinated protocol
+        protocol = {
+            "protocol_type": "hnk_biohacking_synergy",
+            "patient_id": patient_id,
+            "hnk_dose_mg_kg": hnk_dose_mg_kg,
+            "predicted_bdnf_enhancement": synergy_result["bdnf_enhancement"],
+            "predicted_plasticity_score": synergy_result["predicted_plasticity_score"],
+            "device_sequence": [
+                {
+                    "time_relative_to_infusion": 0,
+                    "device": DeviceType.RED_LIGHT_THERAPY.value,
+                    "duration_minutes": 20,
+                    "settings": {"wavelength_nm": 810, "intensity_percent": 70},
+                    "purpose": "concurrent_mitochondrial_enhancement"
+                },
+                {
+                    "time_relative_to_infusion": 30,
+                    "device": DeviceType.PEMF.value,
+                    "duration_minutes": 30,
+                    "settings": {"frequency_hz": 10, "intensity": "moderate"},
+                    "purpose": "post_infusion_neuroplasticity_boost"
+                },
+                {
+                    "time_relative_to_infusion": 60,
+                    "device": DeviceType.BRAINTAP.value,
+                    "duration_minutes": 20,
+                    "settings": {"program": "alpha_theta_enhancement"},
+                    "purpose": "brainwave_optimization"
+                },
+                {
+                    "time_relative_to_infusion": 90,
+                    "device": DeviceType.NEUROGEN.value,
+                    "duration_minutes": 15,
+                    "settings": {"stimulation_type": "transcranial", "intensity": "low"},
+                    "purpose": "sustained_neural_activation"
+                }
+            ],
+            "continuous_monitoring": {
+                "eeg": "continuous_for_4_hours",
+                "vital_signs": "every_15_minutes_for_2_hours",
+                "bdnf_sampling": "baseline_and_at_4_24_48_hours"
+            },
+            "optimal_timing": synergy_result["optimal_device_timing"],
+            "neuroplasticity_window_hours": synergy_result["neuroplasticity_window_duration_hours"],
+            "safety_considerations": [
+                "monitor_blood_pressure_during_all_devices",
+                "ensure_adequate_hydration",
+                "patient_comfort_checks_every_30_minutes"
+            ]
+        }
+        
+        return {
+            "success": True,
+            "integrated_protocol": protocol,
+            "json_output": {
+                "predicted_plasticity_score": protocol["predicted_plasticity_score"],
+                "bdnf_enhancement_percent": synergy_result["bdnf_enhancement"]["peak_increase_percent"],
+                "total_session_duration_minutes": 145,
+                "devices_used": [d["device"] for d in protocol["device_sequence"]],
+                "neuroplasticity_window_hours": protocol["neuroplasticity_window_hours"]
+            }
+        }
     
     # Emergency handling methods
     async def _handle_device_emergency(self, patient_id: str, emergency_data: Dict[str, Any]) -> Dict[str, Any]:
