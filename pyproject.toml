@@ -112,8 +112,9 @@ Repository = "https://github.com/JustGoingViral/NovaVia"
 Changelog = "https://github.com/JustGoingViral/NovaVia/blob/main/CHANGELOG.md"
 "Bug Reports" = "https://github.com/JustGoingViral/NovaVia/issues"
 
-[project.scripts]
-novavia-demo = "demo_device_orchestration:main"
+# Console scripts removed - use 'python demo_device_orchestration.py' directly
+# [project.scripts]
+# novavia-demo = "demo_device_orchestration:main"
 
 [tool.setuptools]
 package-dir = {"" = "."}

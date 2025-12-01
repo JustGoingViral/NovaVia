@@ -69,12 +69,8 @@ setup(
             "sphinx-rtd-theme>=1.3.0",
         ],
     },
-    entry_points={
-        "console_scripts": [
-            "novavia-demo=demo_device_orchestration:main",
-            "novavia-api=api.gateway:main",
-        ],
-    },
+    # Console scripts removed - use 'python demo_device_orchestration.py' and 'python -m api.gateway' instead
+    entry_points={},
     include_package_data=True,
     package_data={
         "": ["*.yml", "*.yaml", "*.json", "*.txt"],
