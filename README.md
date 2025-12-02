@@ -13,6 +13,14 @@
 ![AI Powered](https://img.shields.io/badge/AI%20Powered-Neuroplasticity-green?style=for-the-badge)
 ![Lives Saved](https://img.shields.io/badge/Lives%20Saved-10,000+-red?style=for-the-badge)
 
+### 🎮 **[Interactive Demo →](https://justgoingviral.github.io/NovaVia/)**
+
+Experience the platform in action with our **live interactive visualizations**:
+- **Device Orchestration**: See synchronized multi-modal stimulation with millisecond precision
+- **AI Agent Coordination**: Explore the IRIP multi-agent decision system
+- **HNK Pharmacodynamics**: Interactive dose-response modeling with patient simulator
+- **Neuroplasticity Windows**: Real-time EEG brain state analysis
+
 ---
 
 ## 💫 **The NOVA ViA Revolution**

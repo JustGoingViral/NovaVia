@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA ViA - AI-Powered Neuroplasticity Platform</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>🌟 NOVA ViA</h1>
+            <p class="tagline">Transforming Lives Through AI-Powered Neuroplasticity</p>
+            <p class="subtitle">Interactive visualizations demonstrating synchronized multi-modal stimulation and AI-orchestrated recovery</p>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#device-orchestration">Device Orchestration</a></li>
+                <li><a href="#agent-coordination">AI Agent Coordination</a></li>
+                <li><a href="#hnk-pharmacodynamics">HNK Pharmacodynamics</a></li>
+                <li><a href="#neuroplasticity-windows">Neuroplasticity Windows</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Device Orchestration Section -->
+        <section id="device-orchestration" class="visualization-section">
+            <h2>⚡ Device Orchestration</h2>
+            <p class="section-intro">
+                NOVA ViA coordinates multiple biohacking devices with <strong>sub-millisecond precision</strong> 
+                to optimize neuroplasticity enhancement during predicted treatment windows.
+            </p>
+            
+            <div class="visualization-container">
+                <div class="viz-card">
+                    <h3>Synchronized Device Timeline</h3>
+                    <div id="device-timeline" class="viz-content">
+                        <canvas id="device-timeline-chart"></canvas>
+                    </div>
+                    <p class="viz-description">
+                        Real-time synchronization of Hyperbaric, Red Light, PEMF, and Frequency therapy devices.
+                        All devices coordinate within <strong>&lt;1ms tolerance</strong> during neuroplasticity windows.
+                    </p>
+                </div>
+
+                <div class="viz-card">
+                    <h3>Device States</h3>
+                    <div id="device-states" class="device-grid">
+                        <div class="device-card" id="hyperbaric-card">
+                            <div class="device-icon">🏥</div>
+                            <div class="device-name">Hyperbaric</div>
+                            <div class="device-status status-idle">Idle</div>
+                            <div class="device-params">
+                                <span>Pressure: <strong id="hyperbaric-pressure">1.0</strong> ATA</span>
+                                <span>O₂: <strong id="hyperbaric-o2">21</strong>%</span>
+                            </div>
+                        </div>
+                        <div class="device-card" id="redlight-card">
+                            <div class="device-icon">🔴</div>
+                            <div class="device-name">Red Light</div>
+                            <div class="device-status status-idle">Idle</div>
+                            <div class="device-params">
+                                <span>λ: <strong id="redlight-wavelength">660</strong> nm</span>
+                                <span>Intensity: <strong id="redlight-intensity">0</strong>%</span>
+                            </div>
+                        </div>
+                        <div class="device-card" id="pemf-card">
+                            <div class="device-icon">🧲</div>
+                            <div class="device-name">PEMF</div>
+                            <div class="device-status status-idle">Idle</div>
+                            <div class="device-params">
+                                <span>Freq: <strong id="pemf-freq">0</strong> Hz</span>
+                                <span>Intensity: <strong id="pemf-intensity">0</strong>%</span>
+                            </div>
+                        </div>
+                        <div class="device-card" id="frequency-card">
+                            <div class="device-icon">🎵</div>
+                            <div class="device-name">Frequency</div>
+                            <div class="device-status status-idle">Idle</div>
+                            <div class="device-params">
+                                <span>Binaural: <strong id="freq-binaural">0</strong> Hz</span>
+                                <span>Volume: <strong id="freq-volume">0</strong>%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="start-demo" class="btn btn-primary">▶ Start Demo</button>
+                <button id="reset-demo" class="btn btn-secondary">↻ Reset</button>
+                <div class="timing-display">
+                    <span>Timing Accuracy: <strong id="timing-accuracy">0.000</strong> ms</span>
+                    <span>Phase: <strong id="current-phase">Idle</strong></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Agent Coordination Section -->
+        <section id="agent-coordination" class="visualization-section">
+            <h2>🤖 AI Agent Coordination</h2>
+            <p class="section-intro">
+                The IRIP (Integrated Recovery Intelligence Platform) deploys specialized AI agents 
+                that work as a coordinated team, orchestrated by a central Master Orchestrator.
+            </p>
+            
+            <div class="visualization-container">
+                <div class="viz-card full-width">
+                    <h3>Multi-Agent Decision Flow</h3>
+                    <div id="agent-network" class="viz-content">
+                        <svg id="agent-network-svg" width="100%" height="500"></svg>
+                    </div>
+                    <p class="viz-description">
+                        Interactive visualization of how specialized agents (Crisis Intervention, Medication, 
+                        Biohacking, Therapy, Analytics) coordinate through the Master Orchestrator to make 
+                        consensus-based treatment decisions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="agent-details">
+                <div class="agent-info-card">
+                    <div class="agent-header">
+                        <span class="agent-icon">🚨</span>
+                        <h4>Crisis Intervention</h4>
+                    </div>
+                    <div class="agent-capabilities">
+                        <span class="capability">24/7 Monitoring</span>
+                        <span class="capability">Emergency Response</span>
+                        <span class="capability">Suicide Prevention</span>
+                    </div>
+                </div>
+                <div class="agent-info-card">
+                    <div class="agent-header">
+                        <span class="agent-icon">💊</span>
+                        <h4>Medication</h4>
+                    </div>
+                    <div class="agent-capabilities">
+                        <span class="capability">Dosage Optimization</span>
+                        <span class="capability">MAT Protocols</span>
+                        <span class="capability">Side Effect Prevention</span>
+                    </div>
+                </div>
+                <div class="agent-info-card">
+                    <div class="agent-header">
+                        <span class="agent-icon">🔧</span>
+                        <h4>Biohacking</h4>
+                    </div>
+                    <div class="agent-capabilities">
+                        <span class="capability">Device Coordination</span>
+                        <span class="capability">Circadian Optimization</span>
+                        <span class="capability">Real-time Adjustment</span>
+                    </div>
+                </div>
+                <div class="agent-info-card">
+                    <div class="agent-header">
+                        <span class="agent-icon">🧘</span>
+                        <h4>Therapy</h4>
+                    </div>
+                    <div class="agent-capabilities">
+                        <span class="capability">Session Scheduling</span>
+                        <span class="capability">Ketamine Integration</span>
+                        <span class="capability">Plant Medicine</span>
+                    </div>
+                </div>
+                <div class="agent-info-card">
+                    <div class="agent-header">
+                        <span class="agent-icon">📊</span>
+                        <h4>Analytics</h4>
+                    </div>
+                    <div class="agent-capabilities">
+                        <span class="capability">Outcome Prediction</span>
+                        <span class="capability">Pathway Optimization</span>
+                        <span class="capability">Progress Tracking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HNK Pharmacodynamics Section -->
+        <section id="hnk-pharmacodynamics" class="visualization-section">
+            <h2>💊 HNK Pharmacodynamics</h2>
+            <p class="section-intro">
+                (2R,6R)-Hydroxynorketamine (HNK) modeling for precision neuroplasticity interventions. 
+                HNK induces rapid, sustained neuroplastic effects via BDNF signaling with <strong>minimal side effects</strong>.
+            </p>
+            
+            <div class="visualization-container">
+                <div class="viz-card">
+                    <h3>Dose-Response Curves</h3>
+                    <div id="dose-response" class="viz-content">
+                        <canvas id="dose-response-chart"></canvas>
+                    </div>
+                    <p class="viz-description">
+                        BDNF fold increase and mood improvement score as functions of HNK dose. 
+                        The optimal therapeutic window maximizes efficacy while minimizing dissociation risk.
+                    </p>
+                </div>
+
+                <div class="viz-card">
+                    <h3>BDNF Dynamics Over Time</h3>
+                    <div id="bdnf-dynamics" class="viz-content">
+                        <canvas id="bdnf-dynamics-chart"></canvas>
+                    </div>
+                    <p class="viz-description">
+                        BDNF concentration over 48 hours following HNK infusion. Peak effects at 4-6 hours 
+                        with sustained elevation supporting neuroplastic changes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="patient-simulator">
+                <h3>🧬 Patient Simulator</h3>
+                <div class="simulator-controls">
+                    <div class="control-group">
+                        <label for="patient-weight">Weight (kg)</label>
+                        <input type="range" id="patient-weight" min="40" max="120" value="70">
+                        <span id="patient-weight-value">70</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="metabolism-profile">Metabolism Profile</label>
+                        <select id="metabolism-profile">
+                            <option value="slow">Slow</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="rapid">Rapid</option>
+                            <option value="ultra_rapid">Ultra-Rapid</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="hormonal-phase">Hormonal Phase (Female)</label>
+                        <select id="hormonal-phase">
+                            <option value="na">N/A</option>
+                            <option value="follicular">Follicular (High Estrogen)</option>
+                            <option value="ovulatory">Ovulatory (Peak Estrogen)</option>
+                            <option value="luteal">Luteal</option>
+                            <option value="postpartum">Postpartum Low-Estrogen</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="hnk-dose">HNK Dose (mg/kg)</label>
+                        <input type="range" id="hnk-dose" min="0.05" max="0.5" step="0.01" value="0.3">
+                        <span id="hnk-dose-value">0.30</span>
+                    </div>
+                </div>
+                <div class="simulator-results">
+                    <div class="result-card">
+                        <div class="result-label">Predicted BDNF Increase</div>
+                        <div class="result-value" id="predicted-bdnf">1.5x</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Mood Improvement Score</div>
+                        <div class="result-value" id="mood-score">0.45</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Dissociation Risk</div>
+                        <div class="result-value low-risk" id="dissociation-risk">5%</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Efficacy Modifier</div>
+                        <div class="result-value" id="efficacy-modifier">1.0x</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neuroplasticity Windows Section -->
+        <section id="neuroplasticity-windows" class="visualization-section">
+            <h2>🧠 Neuroplasticity Windows</h2>
+            <p class="section-intro">
+                AI predicts optimal brain states <strong>5-15 minutes in advance</strong>, allowing 
+                synchronized multi-modal stimulation during peak neuroplasticity windows.
+            </p>
+            
+            <div class="visualization-container">
+                <div class="viz-card full-width">
+                    <h3>EEG Brain State Analysis</h3>
+                    <div id="eeg-analysis" class="viz-content">
+                        <canvas id="eeg-chart"></canvas>
+                    </div>
+                    <div class="eeg-indicators">
+                        <div class="indicator">
+                            <span class="indicator-label">Alpha Power</span>
+                            <div class="indicator-bar">
+                                <div class="indicator-fill alpha" id="alpha-power" style="width: 75%"></div>
+                            </div>
+                            <span class="indicator-value" id="alpha-value">0.75</span>
+                        </div>
+                        <div class="indicator">
+                            <span class="indicator-label">Theta Power</span>
+                            <div class="indicator-bar">
+                                <div class="indicator-fill theta" id="theta-power" style="width: 45%"></div>
+                            </div>
+                            <span class="indicator-value" id="theta-value">0.45</span>
+                        </div>
+                        <div class="indicator">
+                            <span class="indicator-label">Gamma Power</span>
+                            <div class="indicator-bar">
+                                <div class="indicator-fill gamma" id="gamma-power" style="width: 32%"></div>
+                            </div>
+                            <span class="indicator-value" id="gamma-value">0.32</span>
+                        </div>
+                        <div class="indicator">
+                            <span class="indicator-label">Coherence</span>
+                            <div class="indicator-bar">
+                                <div class="indicator-fill coherence" id="coherence-power" style="width: 68%"></div>
+                            </div>
+                            <span class="indicator-value" id="coherence-value">0.68</span>
+                        </div>
+                    </div>
+                    <p class="viz-description">
+                        Real-time EEG analysis identifies optimal neuroplasticity windows based on 
+                        alpha dominance, coherence levels, and complexity measures.
+                    </p>
+                </div>
+            </div>
+
+            <div class="window-prediction">
+                <div class="prediction-status" id="window-status">
+                    <span class="status-icon">🎯</span>
+                    <span class="status-text">Neuroplasticity Window: <strong id="window-confidence">87%</strong> confidence</span>
+                    <span class="status-time">Predicted in: <strong id="window-time">3.2</strong> minutes</span>
+                </div>
+                <div class="treatment-phases">
+                    <div class="phase phase-prep">
+                        <span class="phase-icon">⚙️</span>
+                        <span class="phase-name">Preparation</span>
+                    </div>
+                    <div class="phase phase-rampup">
+                        <span class="phase-icon">📈</span>
+                        <span class="phase-name">Ramp Up</span>
+                    </div>
+                    <div class="phase phase-window active">
+                        <span class="phase-icon">⚡</span>
+                        <span class="phase-name">Neuroplasticity Window</span>
+                    </div>
+                    <div class="phase phase-rampdown">
+                        <span class="phase-icon">📉</span>
+                        <span class="phase-name">Ramp Down</span>
+                    </div>
+                    <div class="phase phase-recovery">
+                        <span class="phase-icon">🔄</span>
+                        <span class="phase-name">Recovery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Overview Section -->
+        <section id="architecture" class="visualization-section">
+            <h2>🏗️ Platform Architecture</h2>
+            <div class="architecture-diagram">
+                <pre class="ascii-diagram">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           NOVA ViA Platform                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                               │
+│  ┌───────────────────────────┐     ┌───────────────────────────────────┐    │
+│  │    🧠 ANEP                │     │    🤖 IRIP                        │    │
+│  │    Neuroplasticity        │     │    AI Recovery Intelligence      │    │
+│  │    Enhancement Protocol   │     │    Platform                       │    │
+│  │                           │     │                                   │    │
+│  │  ┌─────────────────────┐  │     │  ┌────────────────────────────┐  │    │
+│  │  │ EEG Analysis &      │  │     │  │ Specialized AI Agents      │  │    │
+│  │  │ Prediction          │  │◄───►│  │ ├─ Crisis Intervention    │  │    │
+│  │  └─────────────────────┘  │     │  │ ├─ Medication             │  │    │
+│  │  ┌─────────────────────┐  │     │  │ ├─ Biohacking             │  │    │
+│  │  │ Device              │  │     │  │ ├─ Therapy                │  │    │
+│  │  │ Orchestration       │  │     │  │ └─ Analytics              │  │    │
+│  │  └─────────────────────┘  │     │  └────────────────────────────┘  │    │
+│  │  ┌─────────────────────┐  │     │  ┌────────────────────────────┐  │    │
+│  │  │ Real-time           │  │     │  │ Master Orchestrator        │  │    │
+│  │  │ Optimization        │  │     │  │ (Consensus-based Decisions)│  │    │
+│  │  └─────────────────────┘  │     │  └────────────────────────────┘  │    │
+│  └───────────────────────────┘     └───────────────────────────────────┘    │
+│                                                                               │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │                        🔒 HIPAA-Compliant Infrastructure               │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  │  │
+│  │  │ Encryption  │  │ Audit Logs  │  │ Access      │  │ Data        │  │  │
+│  │  │ (E2E)      │  │             │  │ Control     │  │ Governance  │  │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘  │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                               │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │                        📡 Device Integration Layer                     │  │
+│  │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐ │  │
+│  │  │Hyperbaric│  │Red Light │  │  PEMF    │  │Frequency │  │  WAVi   │ │  │
+│  │  │ Chamber  │  │ Therapy  │  │ Therapy  │  │ Therapy  │  │  EEG    │ │  │
+│  │  └──────────┘  └──────────┘  └──────────┘  └──────────┘  └─────────┘ │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                               │
+└─────────────────────────────────────────────────────────────────────────────┘
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>🌟 <strong>NOVA ViA</strong> - Every Brain Can Heal. Every Life Can Change.</p>
+                <p class="footer-links">
+                    <a href="https://github.com/JustGoingViral/NovaVia" target="_blank">GitHub Repository</a>
+                    <span>•</span>
+                    <span>Created by Dustin Salinas</span>
+                    <span>•</span>
+                    <span>Licensed under GPL-3.0</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/visualizations.js"></script>
+</body>
+</html>

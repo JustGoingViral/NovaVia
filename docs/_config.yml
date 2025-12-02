@@ -1,0 +1,16 @@
+# GitHub Pages configuration for NOVA ViA Visualizations
+
+title: NOVA ViA - AI-Powered Neuroplasticity
+description: Interactive visualizations demonstrating synchronized multi-modal stimulation and AI-orchestrated recovery
+url: "https://justgoingviral.github.io"
+baseurl: "/NovaVia"
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
