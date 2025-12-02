@@ -411,7 +411,7 @@ class AgentNetworkVisualization {
 
     animateDataFlow() {
         // Periodically highlight communication between agents
-        setInterval(() => {
+        this.animationIntervalId = setInterval(() => {
             const lines = this.svg.selectAll('line');
             lines.transition()
                 .duration(500)
@@ -425,11 +425,31 @@ class AgentNetworkVisualization {
                 });
         }, 2000);
     }
+
+    destroy() {
+        // Clean up interval to prevent memory leaks
+        if (this.animationIntervalId) {
+            clearInterval(this.animationIntervalId);
+        }
+        if (this.simulation) {
+            this.simulation.stop();
+        }
+    }
 }
 
 // ============================================================================
 // HNK Pharmacodynamics Visualization
 // ============================================================================
+
+// HNK Model Constants
+const HNK_CONSTANTS = {
+    BDNF_MAX_INCREASE: 2.5,
+    EC50_SQUARED: 0.04,  // Math.pow(0.2, 2) pre-calculated
+    MOOD_SCALE_FACTOR: 0.4,
+    MOOD_BASE_OFFSET: 0.3,
+    DISSOCIATION_BASE_RISK: 0.05,
+    MAX_SAFE_DOSE: 0.5
+};
 
 class HNKVisualization {
     constructor() {
@@ -458,15 +478,16 @@ class HNKVisualization {
             doses.push(dose.toFixed(2));
             
             // BDNF response (Hill equation simulation)
-            const bdnf = 1 + 2.5 * Math.pow(dose, 2) / (Math.pow(0.2, 2) + Math.pow(dose, 2));
+            const dosePowerTwo = dose * dose;
+            const bdnf = 1 + HNK_CONSTANTS.BDNF_MAX_INCREASE * dosePowerTwo / (HNK_CONSTANTS.EC50_SQUARED + dosePowerTwo);
             bdnfResponse.push(bdnf);
             
             // Mood improvement
-            const mood = Math.min(1.0, (bdnf - 1) * 0.4 + 0.3);
+            const mood = Math.min(1.0, (bdnf - 1) * HNK_CONSTANTS.MOOD_SCALE_FACTOR + HNK_CONSTANTS.MOOD_BASE_OFFSET);
             moodResponse.push(mood);
             
             // Dissociation risk (very low for HNK)
-            const dissociation = 0.05 * (1 + dose / 0.5 * 0.5);
+            const dissociation = HNK_CONSTANTS.DISSOCIATION_BASE_RISK * (1 + dose / HNK_CONSTANTS.MAX_SAFE_DOSE * 0.5);
             dissociationRisk.push(dissociation);
         }
 
@@ -709,12 +730,13 @@ class HNKVisualization {
         };
         const hormModifier = hormonalModifiers[hormonal] || 1.0;
 
-        // Calculate predictions
+        // Calculate predictions using constants
         const adjustedDose = dose * metabFactor;
-        const bdnfIncrease = 1 + 2.5 * Math.pow(adjustedDose, 2) / (Math.pow(0.2, 2) + Math.pow(adjustedDose, 2));
+        const adjustedDosePowerTwo = adjustedDose * adjustedDose;
+        const bdnfIncrease = 1 + HNK_CONSTANTS.BDNF_MAX_INCREASE * adjustedDosePowerTwo / (HNK_CONSTANTS.EC50_SQUARED + adjustedDosePowerTwo);
         const adjustedBdnf = bdnfIncrease * hormModifier;
-        const moodScore = Math.min(1.0, (adjustedBdnf - 1) * 0.4 + 0.3);
-        const dissociationRisk = 0.05 * (1 + dose / 0.5 * 0.5);
+        const moodScore = Math.min(1.0, (adjustedBdnf - 1) * HNK_CONSTANTS.MOOD_SCALE_FACTOR + HNK_CONSTANTS.MOOD_BASE_OFFSET);
+        const dissociationRisk = HNK_CONSTANTS.DISSOCIATION_BASE_RISK * (1 + dose / HNK_CONSTANTS.MAX_SAFE_DOSE * 0.5);
 
         // Update display
         document.getElementById('predicted-bdnf').textContent = adjustedBdnf.toFixed(1) + 'x';
@@ -831,7 +853,7 @@ class EEGVisualization {
     }
 
     startRealTimeUpdate() {
-        setInterval(() => {
+        this.updateIntervalId = setInterval(() => {
             if (!this.isRunning || !this.chart) return;
 
             // Shift data and add new points
@@ -847,6 +869,21 @@ class EEGVisualization {
             // Update indicators
             this.updateIndicators();
         }, 100);
+    }
+
+    stop() {
+        this.isRunning = false;
+        if (this.updateIntervalId) {
+            clearInterval(this.updateIntervalId);
+        }
+    }
+
+    destroy() {
+        // Clean up interval to prevent memory leaks
+        this.stop();
+        if (this.chart) {
+            this.chart.destroy();
+        }
     }
 
     updateIndicators() {
