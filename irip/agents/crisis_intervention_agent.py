@@ -99,6 +99,7 @@ class CrisisInterventionProtocols:
             "urge_surfing", "mindfulness_practice"
         ],
         therapy_modules=["cbt_craving_management", "mindfulness_based_relapse_prevention"],
+        medication_adjustments=None,
         follow_up_schedule=[
             {"timing": "15_minutes", "type": "check_in"},
             {"timing": "1_hour", "type": "coping_assessment"},
@@ -138,6 +139,7 @@ class CrisisInterventionProtocols:
             "safety_planning", "crisis_hotline_connection"
         ],
         therapy_modules=["dbt_distress_tolerance", "suicide_prevention_therapy"],
+        medication_adjustments=None,
         follow_up_schedule=[
             {"timing": "immediate", "type": "continuous_monitoring"},
             {"timing": "1_hour", "type": "safety_check"},
