@@ -185,12 +185,14 @@ class TestDigitalBiomarkersAgent:
             assert 0 <= reading.quality_score <= 1
 
 
+@pytest.mark.skipif(not BIOMARKERS_AVAILABLE, reason="PyTorch not installed")
 def test_biomarker_types():
     """Test biomarker type enumeration"""
     assert BiomarkerType.SLEEP_EFFICIENCY.value == "sleep_efficiency"
     assert BiomarkerType.HEART_RATE_VARIABILITY.value == "heart_rate_variability"
 
 
+@pytest.mark.skipif(not BIOMARKERS_AVAILABLE, reason="PyTorch not installed")
 def test_risk_level_classification():
     """Test risk level enum"""
     assert RelapseRiskLevel.VERY_LOW.value == "very_low"

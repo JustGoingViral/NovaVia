@@ -36,6 +36,14 @@ class AgentCapability(Enum):
     TREATMENT_OPTIMIZATION = "treatment_optimization"
     EMERGENCY_RESPONSE = "emergency_response"
     DATA_ANALYSIS = "data_analysis"
+    # Phase 2 capabilities for orchestration and advanced agents
+    TREATMENT_ORCHESTRATION = "treatment_orchestration"
+    EMERGENCY_COORDINATION = "emergency_coordination"
+    RESOURCE_MANAGEMENT = "resource_management"
+    DECISION_OPTIMIZATION = "decision_optimization"
+    WORKFLOW_MANAGEMENT = "workflow_management"
+    PREDICTIVE_MODELING = "predictive_modeling"
+    TREATMENT_COORDINATION = "treatment_coordination"
 
 
 class AgentPriority(Enum):
@@ -101,9 +109,28 @@ class BaseAgent(ABC):
     - Emergency protocols
     """
     
-    def __init__(self, agent_id: str, config: Dict[str, Any]):
+    def __init__(self, agent_id: str, config: Optional[Dict[str, Any]] = None, 
+                 capabilities: Optional[List[AgentCapability]] = None):
+        """
+        Initialize the base agent.
+        
+        Args:
+            agent_id: Unique identifier for this agent instance
+            config: Optional configuration dictionary for agent settings.
+                   If not provided, defaults to empty dict.
+            capabilities: Optional list of agent capabilities. If provided,
+                         these take precedence and are used directly.
+                         If not provided, defaults to empty list.
+        
+        Note:
+            Two initialization patterns are supported:
+            1. Config-based: Pass agent_id and config dict
+            2. Capabilities-based: Pass agent_id and capabilities list
+            
+            When capabilities are passed explicitly, they take precedence.
+        """
         self.agent_id = agent_id
-        self.config = config
+        self.config = config if config is not None else {}
         self.logger = logging.getLogger(f"{__name__}.{agent_id}")
         
         # Agent properties
@@ -116,8 +143,8 @@ class BaseAgent(ABC):
         self.start_time = time.time()
         self.last_heartbeat = 0.0
         
-        # Capabilities and priorities
-        self.capabilities: List[AgentCapability] = []
+        # Capabilities and priorities - support both constructor styles
+        self.capabilities: List[AgentCapability] = capabilities if capabilities is not None else []
         self.priority_level = AgentPriority.NORMAL
         
         # Communication
@@ -128,7 +155,7 @@ class BaseAgent(ABC):
         # Task management
         self.active_tasks: List[str] = []
         self.task_history: List[Dict[str, Any]] = []
-        self.max_concurrent_tasks = config.get("max_concurrent_tasks", 5)
+        self.max_concurrent_tasks = self.config.get("max_concurrent_tasks", 5)
         
         # Patient context
         self.current_patients: Dict[str, PatientContext] = {}
@@ -154,15 +181,15 @@ class BaseAgent(ABC):
         """Process incoming message and optionally return response"""
         pass
     
-    @abstractmethod
     async def handle_patient_update(self, patient_context: PatientContext):
-        """Handle updates to patient context"""
-        pass
+        """Handle updates to patient context - default implementation"""
+        self.current_patients[patient_context.patient_id] = patient_context
+        self.logger.debug(f"Updated context for patient {patient_context.patient_id}")
     
-    @abstractmethod
     async def handle_emergency(self, emergency_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Handle emergency situations"""
-        pass
+        """Handle emergency situations - default implementation"""
+        self.logger.warning(f"Emergency received but not handled by {self.agent_id}: {emergency_data}")
+        return {"handled": False, "agent_id": self.agent_id}
     
     async def start(self) -> bool:
         """Start the agent and its background tasks"""

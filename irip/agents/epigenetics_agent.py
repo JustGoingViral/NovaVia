@@ -287,7 +287,7 @@ class EpigeneticsAgent(BaseAgent):
         
         # Calculate trauma score
         trauma_score = self._calculate_trauma_score(profile)
-        trauma_detected = trauma_score > 0.5
+        trauma_detected = bool(trauma_score > 0.5)  # Convert numpy bool to Python bool
         
         # Determine risk category
         if response_prob >= 0.7:

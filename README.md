@@ -1,9 +1,12 @@
 # 🌟 NOVA ViA: Transforming Lives Through AI-Powered Neuroplasticity
 
+> **Created by Dustin Salinas** | Licensed under GPL-3.0
+
 =======
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![HIPAA](https://img.shields.io/badge/HIPAA-compliant-red)
+![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
 
 ![NOVA ViA Hero](https://img.shields.io/badge/NOVA%20ViA-Transforming%20Lives-blue?style=for-the-badge)
@@ -608,15 +611,21 @@ python -m pytest tests/test_neuroplasticity.py::test_hope_generation
 
 
 ```
-MIT License - Freedom to Heal
+GNU General Public License v3.0 - Open Source for Open Healing
 
-Copyright (c) 2024 NOVA ViA Systems
+Copyright (c) 2024 Dustin Salinas
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this healing software and associated documentation files (the "Software"),
-to use, modify, and distribute the Software for the purpose of advancing
-addiction recovery and human wellness...
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+Any derivative works must also be licensed under GPL-3.0.
 [Full license text available in LICENSE file]
 ```
 
@@ -654,6 +663,6 @@ addiction recovery and human wellness...
 
 *Built with ❤️, hope, and the unshakeable belief that addiction is not the end of someone's story—it's the beginning of their transformation.*
 
-**© 2024 NOVA ViA Systems. Transforming lives through technology.**
+**© 2024 Dustin Salinas. Licensed under GPL-3.0. Transforming lives through technology.**
 
 </div>

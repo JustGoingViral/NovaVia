@@ -151,6 +151,25 @@ class PsychedelicModelingAgent(BaseAgent):
         ]
     }
     
+    # SSRI drug names for detection
+    SSRI_DRUGS = [
+        "fluoxetine", "sertraline", "paroxetine", "citalopram", 
+        "escitalopram", "fluvoxamine", "prozac", "zoloft", "paxil",
+        "lexapro", "celexa", "luvox"
+    ]
+    
+    # SNRI drug names for detection
+    SNRI_DRUGS = [
+        "venlafaxine", "desvenlafaxine", "duloxetine", "milnacipran",
+        "effexor", "pristiq", "cymbalta", "savella", "levomilnacipran"
+    ]
+    
+    # MAOI drug names for detection
+    MAOI_DRUGS = [
+        "phenelzine", "tranylcypromine", "isocarboxazid", "selegiline",
+        "nardil", "parnate", "marplan", "emsam"
+    ]
+    
     def __init__(self, agent_id: str = "psychedelic_modeling_agent"):
         super().__init__(
             agent_id=agent_id,
@@ -283,14 +302,38 @@ class PsychedelicModelingAgent(BaseAgent):
         contraindicated = self.CONTRAINDICATED_MEDS.get(compound, [])
         
         for med in current_meds:
+            # Check if medication is in a contraindicated class
+            med_class = None
+            if med in self.SSRI_DRUGS:
+                med_class = 'ssri'
+            elif med in self.SNRI_DRUGS:
+                med_class = 'snri'
+            elif med in self.MAOI_DRUGS:
+                med_class = 'maoi'
+            
+            # Check for direct medication name match or drug class match
             for contra_med in contraindicated:
-                if contra_med in med:
+                if contra_med in med or (med_class and med_class == contra_med):
+                    # Washout periods based on drug class
+                    # SSRIs: 14 days (5 half-lives for most)
+                    # SNRIs: 14 days (similar to SSRIs)
+                    # MAOIs: 14-21 days (longer due to irreversible binding)
+                    if med_class == 'ssri':
+                        washout = 14
+                    elif med_class == 'snri':
+                        washout = 14
+                    elif med_class == 'maoi':
+                        washout = 21  # MAOIs require longer washout
+                    else:
+                        washout = 28  # Default for other medications
+                    
                     contraindications.append({
                         'type': ContraindicationType.MEDICATION.value,
                         'reason': f'{med} contraindicated with {compound.value}',
                         'severity': 'relative',
-                        'washout_days': 14 if 'ssri' in contra_med else 28
+                        'washout_days': washout
                     })
+                    break  # Only add one contraindication per medication
         
         # Blood pressure
         bp_sys = patient_data.get('bp_systolic', 120)
