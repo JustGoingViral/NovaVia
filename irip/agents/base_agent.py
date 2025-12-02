@@ -111,6 +111,24 @@ class BaseAgent(ABC):
     
     def __init__(self, agent_id: str, config: Optional[Dict[str, Any]] = None, 
                  capabilities: Optional[List[AgentCapability]] = None):
+        """
+        Initialize the base agent.
+        
+        Args:
+            agent_id: Unique identifier for this agent instance
+            config: Optional configuration dictionary for agent settings.
+                   If not provided, defaults to empty dict.
+            capabilities: Optional list of agent capabilities. If provided,
+                         these take precedence and are used directly.
+                         If not provided, defaults to empty list.
+        
+        Note:
+            Two initialization patterns are supported:
+            1. Config-based: Pass agent_id and config dict
+            2. Capabilities-based: Pass agent_id and capabilities list
+            
+            When capabilities are passed explicitly, they take precedence.
+        """
         self.agent_id = agent_id
         self.config = config if config is not None else {}
         self.logger = logging.getLogger(f"{__name__}.{agent_id}")

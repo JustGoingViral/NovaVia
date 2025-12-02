@@ -314,11 +314,24 @@ class PsychedelicModelingAgent(BaseAgent):
             # Check for direct medication name match or drug class match
             for contra_med in contraindicated:
                 if contra_med in med or (med_class and med_class == contra_med):
+                    # Washout periods based on drug class
+                    # SSRIs: 14 days (5 half-lives for most)
+                    # SNRIs: 14 days (similar to SSRIs)
+                    # MAOIs: 14-21 days (longer due to irreversible binding)
+                    if med_class == 'ssri':
+                        washout = 14
+                    elif med_class == 'snri':
+                        washout = 14
+                    elif med_class == 'maoi':
+                        washout = 21  # MAOIs require longer washout
+                    else:
+                        washout = 28  # Default for other medications
+                    
                     contraindications.append({
                         'type': ContraindicationType.MEDICATION.value,
                         'reason': f'{med} contraindicated with {compound.value}',
                         'severity': 'relative',
-                        'washout_days': 14 if med_class == 'ssri' else 28
+                        'washout_days': washout
                     })
                     break  # Only add one contraindication per medication
         
