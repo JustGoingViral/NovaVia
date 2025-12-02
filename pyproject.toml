@@ -1,0 +1,218 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "novavia"
+version = "1.0.0"
+description = "AI-Powered Neuroplasticity-Based Addiction Recovery Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "NOVA ViA Systems", email = "info@novavia.com"}
+]
+maintainers = [
+    {name = "NOVA ViA Systems", email = "info@novavia.com"}
+]
+keywords = [
+    "addiction recovery",
+    "neuroplasticity",
+    "AI healthcare",
+    "medical AI",
+    "EEG analysis",
+    "treatment coordination",
+    "HIPAA compliant",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: Web Environment",
+    "Framework :: FastAPI",
+    "Natural Language :: English",
+]
+
+dependencies = [
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "pydantic==2.5.0",
+    "pydantic-settings==2.1.0",
+    "sqlalchemy==2.0.23",
+    "alembic==1.13.0",
+    "psycopg2-binary==2.9.9",
+    "redis==5.0.1",
+    "timescaledb==0.0.4",
+    "pandas==2.1.3",
+    "numpy==1.25.2",
+    "tensorflow==2.15.0",
+    "torch==2.7.1",
+    "torchvision==0.16.1",
+    "scikit-learn==1.5.0",
+    "langchain==0.2.5",
+    "langchain-openai==0.0.2",
+    "openai==1.3.7",
+    "anthropic==0.7.8",
+    "kafka-python==2.0.2",
+    "websockets==12.0",
+    "asyncio-mqtt==0.13.0",
+    "pyserial==3.5",
+    "websocket-client==1.6.4",
+    "requests==2.32.4",
+    "aiohttp==3.10.11",
+    "scipy==1.11.4",
+    "matplotlib==3.8.2",
+    "seaborn==0.13.0",
+    "plotly==5.17.0",
+    "cryptography==44.0.1",
+    "passlib[bcrypt]==1.7.4",
+    "python-jose[cryptography]==3.4.0",
+    "python-multipart==0.0.18",
+    "boto3==1.34.0",
+    "azure-storage-blob==12.19.0",
+    "google-cloud-storage==2.10.0",
+    "fastapi-users==12.1.2",
+    "python-dotenv==1.0.0",
+    "prometheus-client==0.19.0",
+    "structlog==23.2.0",
+    "mne==1.5.1",
+    "neurodsp==2.2.1",
+    "yasa==0.6.4",
+    "obspy==1.4.0",
+    "pywavelets==1.4.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.3",
+    "pytest-asyncio==0.21.1",
+    "pytest-cov==4.1.0",
+    "httpx==0.25.2",
+    "black==24.3.0",
+    "isort==5.12.0",
+    "pylint==3.0.3",
+    "mypy==1.7.1",
+]
+docs = [
+    "sphinx==7.2.6",
+    "sphinx-rtd-theme==1.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/JustGoingViral/NovaVia"
+Documentation = "https://github.com/JustGoingViral/NovaVia/blob/main/README.md"
+Repository = "https://github.com/JustGoingViral/NovaVia"
+Changelog = "https://github.com/JustGoingViral/NovaVia/blob/main/CHANGELOG.md"
+"Bug Reports" = "https://github.com/JustGoingViral/NovaVia/issues"
+
+# Console scripts removed - use 'python demo_device_orchestration.py' directly
+# [project.scripts]
+# novavia-demo = "demo_device_orchestration:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["anep*", "irip*", "api*", "config*", "data*"]
+exclude = ["tests*", "*.tests*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--cov=anep",
+    "--cov=irip",
+    "--cov=api",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+asyncio_mode = "auto"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+strict_equality = true
+ignore_missing_imports = true
+
+[tool.pylint.messages_control]
+max-line-length = 100
+disable = [
+    "C0111",  # missing-docstring
+    "C0103",  # invalid-name
+    "R0913",  # too-many-arguments
+    "R0914",  # too-many-locals
+]
+
+[tool.coverage.run]
+source = ["anep", "irip", "api", "config", "data"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/env/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
