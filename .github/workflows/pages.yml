@@ -1,11 +1,11 @@
-# GitHub Pages deployment workflow for NOVA ViA visualizations
+# GitHub Pages deployment workflow for NOVA ViA Premium Interactive Experience
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: ["main"]
-    paths:
-      - 'docs/**'
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
