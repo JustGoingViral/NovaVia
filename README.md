@@ -685,6 +685,51 @@ Any derivative works must also be licensed under GPL-3.0.
 
 ---
 
+## 🙏 **Acknowledgments**
+
+### **Research Foundation**
+
+This work builds upon decades of groundbreaking research by the scientific community. We are deeply grateful to the researchers whose work has made NOVA ViA possible:
+
+**Ketamine and Hydroxynorketamine Research:**
+- Zanos, P., et al. (2016). NMDAR inhibition-independent antidepressant actions of ketamine metabolites. *Nature*, 533(7604), 481-486.
+- Zanos, P., & Gould, T. D. (2018). Mechanisms of ketamine action as an antidepressant. *Molecular Psychiatry*, 23(4), 801-811.
+- Highland, J. N., et al. (2019). Hydroxynorketamines: Pharmacology and Potential Therapeutic Applications. *Pharmacological Reviews*, 71(4), 524-550.
+
+**Digital Phenotyping and Mental Health Technology:**
+- Torous, J., et al. (2016). New tools for new research in psychiatry. *JMIR Mental Health*, 3(2), e16.
+
+**Pharmacogenomics:**
+- Caudle, K. E., et al. (2020). Standardizing CYP2D6 Genotype to Phenotype Translation. *Clinical Pharmacology & Therapeutics*, 107(1), 194-197.
+
+**Neurostimulation:**
+- Bergmann, T. O., et al. (2016). Combining non-invasive transcranial brain stimulation with neuroimaging. *Brain Stimulation*, 9(6), 784-795.
+
+**Gut-Brain Axis:**
+- Valles-Colomer, M., et al. (2019). The neuroactive potential of the human gut microbiota. *Nature Microbiology*, 4(4), 623-632.
+
+### **Open Source Community**
+
+We are grateful to the open-source community for foundational tools:
+- Python Software Foundation and the Python community
+- TensorFlow, PyTorch, and deep learning communities
+- FastAPI, Pydantic, and modern web framework developers
+- Scientific computing: NumPy, SciPy, pandas, scikit-learn
+- Neuroscience: MNE-Python, NeuroDSP, YASA, ObsPy
+
+### **Funding and Support**
+
+This project has been supported by:
+- **NIH HEAL Initiative** - Addiction research funding
+- **Gates Foundation** - Global health access
+- **Schmidt Futures** - AI for social good initiative
+
+For a complete list of contributors and acknowledgments, see [CONTRIBUTORS.md](CONTRIBUTORS.md).
+
+For citation information, see [CITATION.cff](CITATION.cff) and the [Citation](#-citation) section above.
+
+---
+
 <div align="center">
 
 # 🌟 **Every Brain Can Heal. Every Life Can Change.** 🌟

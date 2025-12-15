@@ -4,6 +4,11 @@ include CHANGELOG.md
 include RELEASE_NOTES.md
 include DEVELOPMENT_ROADMAP.md
 include LICENSE
+include CITATION.cff
+include CONTRIBUTORS.md
+include .zenodo.json
+include codemeta.json
+include ZENODO_RELEASE.md
 
 # Include configuration files
 include requirements.txt
