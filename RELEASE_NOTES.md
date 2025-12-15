@@ -265,4 +265,4 @@ NOVA ViA isn't just treating addiction—we're rewriting the future of recovery 
 
 *Built with ❤️, hope, and the unshakeable belief that addiction is not the end of someone's story—it's the beginning of their transformation.*
 
-**© 2024 NOVA ViA Systems**
+**© 2024 Institute of Applied Integrated Biophysics**

@@ -24,7 +24,7 @@ if requirements_file.exists():
 setup(
     name="novavia",
     version="1.0.0",
-    author="NOVA ViA Systems",
+    author="Institute of Applied Integrated Biophysics",
     author_email="info@novavia.com",
     description="AI-Powered Neuroplasticity-Based Addiction Recovery Platform with Multi-Agent Intelligence, Real-Time EEG Analysis, and Precision Medicine Integration",
     long_description=long_description,

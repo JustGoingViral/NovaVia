@@ -14,14 +14,14 @@
       "@id": "https://orcid.org/0009-0006-0148-204X",
       "affiliation": {
         "@type": "Organization",
-        "name": "NOVA ViA Systems"
+        "name": "Institute of Applied Integrated Biophysics"
       }
     }
   ],
   "contributor": [
     {
       "@type": "Organization",
-      "name": "NOVA ViA Systems Development Team"
+      "name": "Institute of Applied Integrated Biophysics Development Team"
     }
   ],
   "license": "https://spdx.org/licenses/GPL-3.0-or-later",

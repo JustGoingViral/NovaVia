@@ -6,13 +6,13 @@ This file acknowledges the contributors to the NOVA ViA project.
 
 **Dustin Salinas**
 - Role: Project Creator, Lead Developer, Principal Investigator
-- Affiliation: NOVA ViA Systems
+- Affiliation: Institute of Applied Integrated Biophysics
 - Email: info@novavia.com
 - Contributions: Overall system architecture, AI agent framework, neuroplasticity enhancement protocols, HNK pharmacodynamic modeling, Phase 1 clinical enhancements
 
 ## Core Development Team
 
-**NOVA ViA Systems Development Team**
+**Institute of Applied Integrated Biophysics Development Team**
 - Role: Core development, testing, documentation
 - Contributions: Platform implementation, testing infrastructure, documentation improvements, demo applications
 

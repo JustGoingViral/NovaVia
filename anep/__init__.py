@@ -5,7 +5,7 @@ Core module for EEG processing, neuroplasticity prediction, and device orchestra
 """
 
 __version__ = "1.0.0"
-__author__ = "NOVA ViA Systems"
+__author__ = "Institute of Applied Integrated Biophysics"
 
 # Import classes only when explicitly requested to avoid dependency issues
 # Users should import directly from submodules:

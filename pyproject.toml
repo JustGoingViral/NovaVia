@@ -10,10 +10,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "GPL-3.0"}
 authors = [
-    {name = "NOVA ViA Systems", email = "info@novavia.com"}
+    {name = "Institute of Applied Integrated Biophysics", email = "info@novavia.com"}
 ]
 maintainers = [
-    {name = "NOVA ViA Systems", email = "info@novavia.com"}
+    {name = "Institute of Applied Integrated Biophysics", email = "info@novavia.com"}
 ]
 keywords = [
     "addiction recovery",
