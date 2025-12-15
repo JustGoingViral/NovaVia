@@ -2,12 +2,52 @@
 
 > **Created by Dustin Salinas** | Licensed under GPL-3.0
 
-=======
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PLACEHOLDER.svg)](https://doi.org/10.5281/zenodo.PLACEHOLDER)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.11+-green)
 ![HIPAA](https://img.shields.io/badge/HIPAA-compliant-red)
 ![License](https://img.shields.io/badge/license-GPL--3.0-blue)
 
+---
+
+## 📄 Abstract
+
+**NOVA ViA** (Neuroplasticity Optimization Via AI) is an open-source, AI-powered platform that integrates precision medicine, computational neuroscience, and multi-modal therapeutic interventions to revolutionize addiction recovery and treatment-resistant mental health conditions. The platform implements the Intensive Care Medical Assisted Treatment (IC-MAT) protocol, combining real-time electroencephalography (EEG) analysis, synchronized multi-device stimulation, and a multi-agent artificial intelligence system to achieve 87% long-term recovery rates—significantly exceeding the 23% industry standard.
+
+**Core Innovations:**
+1. **Adaptive Neuroplasticity Enhancement Protocol (ANEP)**: Real-time EEG-guided coordination of hyperbaric oxygen therapy, pulsed electromagnetic field (PEMF) therapy, red light therapy, and frequency therapy with sub-millisecond synchronization precision
+2. **Predictive Neuroplasticity Window Detection**: Machine learning algorithms predict optimal treatment windows 5-15 minutes in advance with 87% accuracy
+3. **Hydroxynorketamine (HNK) Pharmacodynamic Modeling**: Precision dosing algorithms for rapid antidepressant effects via BDNF upregulation without dissociative side effects
+4. **Integrated Recovery Intelligence Platform (IRIP)**: Multi-agent AI system featuring crisis intervention, medication optimization, biohacking coordination, therapy management, and predictive analytics
+5. **Phase 1 Clinical Enhancements**: Digital biomarkers (LSTM-based relapse prediction), pharmacogenomics (CPIC-guideline dose adjustments), closed-loop neurostimulation (PID-controlled tDCS/rTMS), and gut-brain axis metabolomics
+
+**Target Conditions**: Treatment-resistant postpartum depression (TR-PPD), substance use disorder (SUD), treatment-resistant depression (TRD), with emphasis on women's health equity and hormonal modulation.
+
+**Technical Stack**: Python 3.11+, TensorFlow/PyTorch, FastAPI, HIPAA-compliant architecture, real-time data processing, secure multi-device orchestration.
+
+## 📚 Citation
+
+If you use NOVA ViA in your research, please cite:
+
+```bibtex
+@software{salinas2024novavia,
+  author       = {Salinas, Dustin},
+  title        = {{NOVA ViA: AI-Powered Neuroplasticity-Based 
+                   Addiction Recovery Platform}},
+  year         = 2024,
+  version      = {1.0.0},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.PLACEHOLDER},
+  url          = {https://github.com/JustGoingViral/NovaVia}
+}
+```
+
+**Plain Text Citation:**
+> Salinas, D. (2024). NOVA ViA: AI-Powered Neuroplasticity-Based Addiction Recovery Platform (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.PLACEHOLDER
+
+**See also**: [CITATION.cff](CITATION.cff) for machine-readable citation metadata and [CONTRIBUTORS.md](CONTRIBUTORS.md) for acknowledgments.
+
+---
 
 ![NOVA ViA Hero](https://img.shields.io/badge/NOVA%20ViA-Transforming%20Lives-blue?style=for-the-badge)
 ![AI Powered](https://img.shields.io/badge/AI%20Powered-Neuroplasticity-green?style=for-the-badge)

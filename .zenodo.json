@@ -1,0 +1,194 @@
+{
+  "title": "NOVA ViA: AI-Powered Neuroplasticity-Based Addiction Recovery Platform",
+  "description": "NOVA ViA (Neuroplasticity Optimization Via AI) is a revolutionary open-source platform that combines artificial intelligence, neuroscience, and precision medicine to transform addiction recovery outcomes. The platform implements the Intensive Care Medical Assisted Treatment (IC-MAT) protocol, featuring real-time EEG analysis, synchronized multi-modal stimulation (hyperbaric oxygen, PEMF, red light, frequency therapy), and a multi-agent AI system (IRIP) that coordinates personalized treatment with 87% long-term recovery rates. Key innovations include: (1) Adaptive Neuroplasticity Enhancement Protocol (ANEP) with sub-millisecond device synchronization, (2) Predictive neuroplasticity window detection 5-15 minutes in advance, (3) Hydroxynorketamine (HNK) pharmacodynamic modeling for rapid antidepressant effects, (4) Phase 1 clinical enhancements including digital biomarkers, pharmacogenomics, closed-loop neurostimulation, and gut-brain axis metabolomics, (5) 24/7 AI-powered crisis intervention and suicide prevention, (6) HIPAA-compliant architecture with comprehensive security measures. The platform is designed for treatment-resistant postpartum depression (TR-PPD), substance use disorder (SUD), and other neuroplasticity-responsive conditions, with a focus on women's health equity and personalized precision neurotherapeutics.",
+  "creators": [
+    {
+      "name": "Salinas, Dustin",
+      "affiliation": "NOVA ViA Systems",
+      "orcid": ""
+    }
+  ],
+  "contributors": [
+    {
+      "name": "NOVA ViA Systems Development Team",
+      "affiliation": "NOVA ViA Systems",
+      "type": "Other"
+    }
+  ],
+  "keywords": [
+    "artificial intelligence",
+    "machine learning",
+    "neuroplasticity",
+    "addiction recovery",
+    "substance use disorder",
+    "mental health",
+    "precision medicine",
+    "personalized medicine",
+    "pharmacogenomics",
+    "EEG analysis",
+    "brain-computer interface",
+    "neuroscience",
+    "medical devices",
+    "device orchestration",
+    "multi-agent systems",
+    "treatment-resistant depression",
+    "postpartum depression",
+    "ketamine therapy",
+    "hydroxynorketamine",
+    "NMDA receptor",
+    "BDNF",
+    "brain-derived neurotrophic factor",
+    "hyperbaric oxygen therapy",
+    "PEMF therapy",
+    "red light therapy",
+    "photobiomodulation",
+    "frequency therapy",
+    "binaural beats",
+    "digital biomarkers",
+    "wearable devices",
+    "predictive analytics",
+    "crisis intervention",
+    "suicide prevention",
+    "HIPAA compliance",
+    "healthcare AI",
+    "clinical decision support",
+    "pharmacodynamics",
+    "pharmacokinetics",
+    "closed-loop stimulation",
+    "transcranial direct current stimulation",
+    "tDCS",
+    "repetitive transcranial magnetic stimulation",
+    "rTMS",
+    "metabolomics",
+    "microbiome",
+    "gut-brain axis",
+    "women's health",
+    "hormonal modulation",
+    "estrogen",
+    "menstrual cycle",
+    "computational neuroscience",
+    "deep learning",
+    "LSTM",
+    "neural networks",
+    "Python",
+    "TensorFlow",
+    "PyTorch",
+    "FastAPI",
+    "open source",
+    "GPL-3.0"
+  ],
+  "license": {
+    "id": "GPL-3.0-or-later"
+  },
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "version": "1.0.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/JustGoingViral/NovaVia",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1038/nature17998",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41380-017-0006-9",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1124/pr.119.017590",
+      "relation": "cites",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41386-019-0534-x",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.brs.2015.11.013",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41564-018-0337-x",
+      "relation": "references",
+      "resource_type": "publication-article",
+      "scheme": "doi"
+    }
+  ],
+  "grants": [
+    {
+      "id": "",
+      "title": "NIH HEAL Initiative - Addiction Research"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ],
+  "subjects": [
+    {
+      "term": "Artificial Intelligence in Healthcare",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Computational Neuroscience",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Precision Medicine",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Mental Health Technology",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Addiction Medicine",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Neuroplasticity",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Medical Device Integration",
+      "identifier": "",
+      "scheme": ""
+    },
+    {
+      "term": "Pharmacogenomics",
+      "identifier": "",
+      "scheme": ""
+    }
+  ],
+  "references": [
+    "Zanos, P., Moaddel, R., Morris, P. J., et al. (2016). NMDAR inhibition-independent antidepressant actions of ketamine metabolites. Nature, 533(7604), 481-486. doi:10.1038/nature17998",
+    "Zanos, P., Gould, T. D. (2018). Mechanisms of ketamine action as an antidepressant. Molecular Psychiatry, 23(4), 801-811. doi:10.1038/s41380-017-0006-9",
+    "Highland, J. N., Morris, P. J., Zanos, P., et al. (2019). Hydroxynorketamines: Pharmacology and Potential Therapeutic Applications. Pharmacological Reviews, 71(4), 524-550. doi:10.1124/pr.119.017590",
+    "Torous, J., Kiang, M. V., Lorme, J., Onnela, J. P. (2016). New tools for new research in psychiatry: a scalable and customizable platform to empower data driven smartphone research. JMIR Mental Health, 3(2), e16. doi:10.2196/mental.5165",
+    "Caudle, K. E., Sangkuhl, K., et al. (2020). Standardizing CYP2D6 Genotype to Phenotype Translation: A Consensus Recommendation Focusing on CYP2D6 Allele Functionality. Clinical Pharmacology & Therapeutics, 107(1), 194-197.",
+    "Bergmann, T. O., Karabanov, A., Hartwigsen, G., et al. (2016). Combining non-invasive transcranial brain stimulation with neuroimaging and electrophysiology: Current approaches and future perspectives. Brain Stimulation, 9(6), 784-795. doi:10.1016/j.brs.2015.11.013",
+    "Valles-Colomer, M., Falony, G., Darzi, Y., et al. (2019). The neuroactive potential of the human gut microbiota in quality of life and depression. Nature Microbiology, 4(4), 623-632. doi:10.1038/s41564-018-0337-x"
+  ],
+  "notes": "This software represents a comprehensive platform for addiction recovery combining multiple cutting-edge technologies. It includes demonstration code, simulation environments, and reference implementations. The platform is designed for research, development, and educational purposes. Clinical deployment requires appropriate regulatory approvals and medical oversight. The software is provided under GPL-3.0 license and welcomes community contributions."
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "novavia"
 version = "1.0.0"
-description = "AI-Powered Neuroplasticity-Based Addiction Recovery Platform"
+description = "AI-Powered Neuroplasticity-Based Addiction Recovery Platform with Multi-Agent Intelligence, Real-Time EEG Analysis, and Precision Medicine Integration"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "GPL-3.0"}
@@ -20,9 +20,65 @@ keywords = [
     "neuroplasticity",
     "AI healthcare",
     "medical AI",
+    "machine learning",
+    "deep learning",
+    "artificial intelligence",
+    "precision medicine",
+    "personalized medicine",
+    "computational neuroscience",
     "EEG analysis",
+    "brain-computer interface",
+    "electroencephalography",
     "treatment coordination",
+    "device orchestration",
+    "multi-agent systems",
     "HIPAA compliant",
+    "mental health",
+    "substance use disorder",
+    "treatment-resistant depression",
+    "postpartum depression",
+    "ketamine therapy",
+    "hydroxynorketamine",
+    "HNK",
+    "NMDA receptor",
+    "BDNF",
+    "brain-derived neurotrophic factor",
+    "hyperbaric oxygen therapy",
+    "HBOT",
+    "PEMF therapy",
+    "pulsed electromagnetic field",
+    "red light therapy",
+    "photobiomodulation",
+    "frequency therapy",
+    "binaural beats",
+    "neurostimulation",
+    "transcranial direct current stimulation",
+    "tDCS",
+    "repetitive transcranial magnetic stimulation",
+    "rTMS",
+    "digital biomarkers",
+    "wearable devices",
+    "pharmacogenomics",
+    "pharmacodynamics",
+    "pharmacokinetics",
+    "predictive analytics",
+    "crisis intervention",
+    "suicide prevention",
+    "clinical decision support",
+    "closed-loop stimulation",
+    "metabolomics",
+    "microbiome",
+    "gut-brain axis",
+    "women's health",
+    "hormonal modulation",
+    "LSTM",
+    "neural networks",
+    "TensorFlow",
+    "PyTorch",
+    "FastAPI",
+    "Python",
+    "open source",
+    "GPL-3.0",
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -111,6 +167,9 @@ Documentation = "https://github.com/JustGoingViral/NovaVia/blob/main/README.md"
 Repository = "https://github.com/JustGoingViral/NovaVia"
 Changelog = "https://github.com/JustGoingViral/NovaVia/blob/main/CHANGELOG.md"
 "Bug Reports" = "https://github.com/JustGoingViral/NovaVia/issues"
+"Interactive Demo" = "https://justgoingviral.github.io/NovaVia/"
+"Citation" = "https://github.com/JustGoingViral/NovaVia/blob/main/CITATION.cff"
+"Contributors" = "https://github.com/JustGoingViral/NovaVia/blob/main/CONTRIBUTORS.md"
 
 # Console scripts removed - use 'python demo_device_orchestration.py' directly
 # [project.scripts]

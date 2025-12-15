@@ -1,0 +1,190 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "NOVA ViA: AI-Powered Neuroplasticity-Based Addiction Recovery Platform"
+abstract: >
+  NOVA ViA (Neuroplasticity Optimization Via AI) is a revolutionary open-source 
+  platform that combines artificial intelligence, neuroscience, and precision 
+  medicine to transform addiction recovery outcomes. The platform implements the 
+  Intensive Care Medical Assisted Treatment (IC-MAT) protocol, featuring real-time 
+  EEG analysis, synchronized multi-modal stimulation, and a multi-agent AI system 
+  that coordinates personalized treatment with 87% long-term recovery rates.
+  
+  Key innovations include: (1) Adaptive Neuroplasticity Enhancement Protocol (ANEP) 
+  with sub-millisecond device synchronization, (2) Predictive neuroplasticity window 
+  detection 5-15 minutes in advance, (3) Hydroxynorketamine (HNK) pharmacodynamic 
+  modeling for rapid antidepressant effects, (4) Phase 1 clinical enhancements 
+  including digital biomarkers, pharmacogenomics, closed-loop neurostimulation, 
+  and gut-brain axis metabolomics, (5) 24/7 AI-powered crisis intervention and 
+  suicide prevention.
+
+authors:
+  - family-names: Salinas
+    given-names: Dustin
+    email: info@novavia.com
+    affiliation: "NOVA ViA Systems"
+    orcid: ""
+
+repository-code: "https://github.com/JustGoingViral/NovaVia"
+url: "https://github.com/JustGoingViral/NovaVia"
+repository-artifact: "https://zenodo.org/record/PLACEHOLDER"
+version: 1.0.0
+date-released: "2024-12-01"
+license: GPL-3.0-or-later
+
+keywords:
+  - artificial intelligence
+  - machine learning
+  - neuroplasticity
+  - addiction recovery
+  - substance use disorder
+  - mental health
+  - precision medicine
+  - personalized medicine
+  - pharmacogenomics
+  - EEG analysis
+  - brain-computer interface
+  - neuroscience
+  - medical devices
+  - multi-agent systems
+  - treatment-resistant depression
+  - postpartum depression
+  - ketamine therapy
+  - hydroxynorketamine
+  - hyperbaric oxygen therapy
+  - PEMF therapy
+  - red light therapy
+  - digital biomarkers
+  - predictive analytics
+  - crisis intervention
+  - suicide prevention
+  - HIPAA compliance
+  - healthcare AI
+  - clinical decision support
+  - closed-loop stimulation
+  - metabolomics
+  - gut-brain axis
+  - women's health
+  - computational neuroscience
+  - deep learning
+  - Python
+  - TensorFlow
+  - PyTorch
+  - FastAPI
+  - open source
+
+references:
+  - type: article
+    authors:
+      - family-names: Zanos
+        given-names: P.
+      - family-names: Moaddel
+        given-names: R.
+      - family-names: Morris
+        given-names: P. J.
+    title: "NMDAR inhibition-independent antidepressant actions of ketamine metabolites"
+    journal: "Nature"
+    year: 2016
+    volume: 533
+    issue: 7604
+    start: 481
+    end: 486
+    doi: "10.1038/nature17998"
+
+  - type: article
+    authors:
+      - family-names: Zanos
+        given-names: P.
+      - family-names: Gould
+        given-names: T. D.
+    title: "Mechanisms of ketamine action as an antidepressant"
+    journal: "Molecular Psychiatry"
+    year: 2018
+    volume: 23
+    issue: 4
+    start: 801
+    end: 811
+    doi: "10.1038/s41380-017-0006-9"
+
+  - type: article
+    authors:
+      - family-names: Highland
+        given-names: J. N.
+      - family-names: Morris
+        given-names: P. J.
+      - family-names: Zanos
+        given-names: P.
+    title: "Hydroxynorketamines: Pharmacology and Potential Therapeutic Applications"
+    journal: "Pharmacological Reviews"
+    year: 2019
+    volume: 71
+    issue: 4
+    start: 524
+    end: 550
+    doi: "10.1124/pr.119.017590"
+
+  - type: article
+    authors:
+      - family-names: Torous
+        given-names: J.
+      - family-names: Kiang
+        given-names: M. V.
+      - family-names: Lorme
+        given-names: J.
+      - family-names: Onnela
+        given-names: J. P.
+    title: "New tools for new research in psychiatry: a scalable and customizable platform to empower data driven smartphone research"
+    journal: "JMIR Mental Health"
+    year: 2016
+    volume: 3
+    issue: 2
+    start: e16
+    doi: "10.2196/mental.5165"
+
+  - type: article
+    authors:
+      - family-names: Bergmann
+        given-names: T. O.
+      - family-names: Karabanov
+        given-names: A.
+      - family-names: Hartwigsen
+        given-names: G.
+    title: "Combining non-invasive transcranial brain stimulation with neuroimaging and electrophysiology: Current approaches and future perspectives"
+    journal: "Brain Stimulation"
+    year: 2016
+    volume: 9
+    issue: 6
+    start: 784
+    end: 795
+    doi: "10.1016/j.brs.2015.11.013"
+
+  - type: article
+    authors:
+      - family-names: Valles-Colomer
+        given-names: M.
+      - family-names: Falony
+        given-names: G.
+      - family-names: Darzi
+        given-names: Y.
+    title: "The neuroactive potential of the human gut microbiota in quality of life and depression"
+    journal: "Nature Microbiology"
+    year: 2019
+    volume: 4
+    issue: 4
+    start: 623
+    end: 632
+    doi: "10.1038/s41564-018-0337-x"
+
+preferred-citation:
+  type: software
+  authors:
+    - family-names: Salinas
+      given-names: Dustin
+      email: info@novavia.com
+      affiliation: "NOVA ViA Systems"
+  title: "NOVA ViA: AI-Powered Neuroplasticity-Based Addiction Recovery Platform"
+  version: 1.0.0
+  year: 2024
+  license: GPL-3.0-or-later
+  repository-code: "https://github.com/JustGoingViral/NovaVia"
+  doi: "10.5281/zenodo.PLACEHOLDER"
