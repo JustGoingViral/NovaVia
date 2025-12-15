@@ -754,6 +754,17 @@ For citation information, see [CITATION.cff](CITATION.cff) and the [Citation](#-
 
 ---
 
+### **Documentation & Metadata**
+
+📄 [CITATION.cff](CITATION.cff) - Machine-readable citation metadata  
+👥 [CONTRIBUTORS.md](CONTRIBUTORS.md) - Acknowledgments and contribution guidelines  
+📊 [ZENODO_RELEASE.md](ZENODO_RELEASE.md) - Instructions for Zenodo publication  
+🔬 [codemeta.json](codemeta.json) - Software metadata (CodeMeta standard)  
+📋 [.zenodo.json](.zenodo.json) - Zenodo deposit metadata  
+📝 [CHANGELOG.md](CHANGELOG.md) - Version history and release notes
+
+---
+
 *Built with ❤️, hope, and the unshakeable belief that addiction is not the end of someone's story—it's the beginning of their transformation.*
 
 **© 2024 Dustin Salinas. Licensed under GPL-3.0. Transforming lives through technology.**
