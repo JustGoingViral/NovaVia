@@ -2,6 +2,8 @@
 
 This document provides instructions for publishing NOVA ViA releases to Zenodo for permanent archival and DOI assignment.
 
+> **⚠️ Important Note**: This repository contains `PLACEHOLDER` text in DOI fields within README.md, CITATION.cff, and other files. These placeholders will be replaced with the actual Zenodo DOI after the first release is published to Zenodo. This is intentional and expected.
+
 ## Prerequisites
 
 1. **Zenodo Account**: Create an account at https://zenodo.org/ (or use https://sandbox.zenodo.org/ for testing)
