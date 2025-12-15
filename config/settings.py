@@ -13,8 +13,8 @@ import secrets
 class DatabaseSettings(PydanticBaseSettings):
     """Database configuration settings"""
     
-    url: str = Field(default="postgresql://postgres:password@localhost:5432/novavia")
-    timescaledb_url: str = Field(default="postgresql://postgres:password@localhost:5433/novavia_timeseries")
+    url: str = Field(default="postgresql://novavia_user:CHANGE_ME@localhost:5432/novavia")
+    timescaledb_url: str = Field(default="postgresql://novavia_user:CHANGE_ME@localhost:5433/novavia_timeseries")
     pool_size: int = Field(default=20)
     max_overflow: int = Field(default=10)
     echo: bool = Field(default=False)
@@ -26,8 +26,8 @@ class DatabaseSettings(PydanticBaseSettings):
 class RedisSettings(PydanticBaseSettings):
     """Redis configuration settings"""
     
-    url: str = Field(default="redis://localhost:6379")
-    password: Optional[str] = Field(default="redispassword")
+    url: str = Field(default="redis://:CHANGE_ME@localhost:6379")
+    password: Optional[str] = Field(default=None)
     db: int = Field(default=0)
     decode_responses: bool = Field(default=True)
     
