@@ -26,7 +26,7 @@ class DatabaseSettings(PydanticBaseSettings):
 class RedisSettings(PydanticBaseSettings):
     """Redis configuration settings"""
     
-    url: str = Field(default="redis://:CHANGE_ME@localhost:6379")
+    url: str = Field(default="redis://localhost:6379")
     password: Optional[str] = Field(default=None)
     db: int = Field(default=0)
     decode_responses: bool = Field(default=True)
