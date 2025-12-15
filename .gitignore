@@ -95,3 +95,7 @@ simulation_data/
 # Screenshots and demos
 screenshots/
 demo_output/
+
+# Stray files (prevent accidental commits)
+*%
+*.percentage
