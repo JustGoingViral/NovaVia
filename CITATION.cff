@@ -23,7 +23,7 @@ authors:
     given-names: Dustin
     email: info@novavia.com
     affiliation: "NOVA ViA Systems"
-    orcid: ""
+    orcid: "https://orcid.org/0009-0006-0148-204X"
 
 repository-code: "https://github.com/JustGoingViral/NovaVia"
 url: "https://github.com/JustGoingViral/NovaVia"
@@ -182,6 +182,7 @@ preferred-citation:
       given-names: Dustin
       email: info@novavia.com
       affiliation: "NOVA ViA Systems"
+      orcid: "https://orcid.org/0009-0006-0148-204X"
   title: "NOVA ViA: AI-Powered Neuroplasticity-Based Addiction Recovery Platform"
   version: 1.0.0
   year: 2024

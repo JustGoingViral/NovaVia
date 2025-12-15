@@ -11,6 +11,7 @@
       "givenName": "Dustin",
       "familyName": "Salinas",
       "email": "info@novavia.com",
+      "@id": "https://orcid.org/0009-0006-0148-204X",
       "affiliation": {
         "@type": "Organization",
         "name": "NOVA ViA Systems"

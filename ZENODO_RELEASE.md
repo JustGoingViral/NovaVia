@@ -8,7 +8,8 @@ This document provides instructions for publishing NOVA ViA releases to Zenodo f
 
 1. **Zenodo Account**: Create an account at https://zenodo.org/ (or use https://sandbox.zenodo.org/ for testing)
 2. **GitHub Integration**: Connect your GitHub repository to Zenodo
-3. **ORCID (Recommended)**: Register for an ORCID iD at https://orcid.org/ and add it to `.zenodo.json`
+3. **ORCID**: ✅ Already configured with ORCID `0009-0006-0148-204X`
+4. **Zenodo Community**: ✅ Configured to publish to the `biophysics` community
 
 ## Metadata Files
 
@@ -56,16 +57,12 @@ CodeMeta metadata following schema.org standards. Includes:
 
 3. **Update CHANGELOG.md** with release notes
 
-4. **Add ORCID identifiers** (if available) to `.zenodo.json`:
-   ```json
-   "creators": [
-     {
-       "name": "Salinas, Dustin",
-       "affiliation": "NOVA ViA Systems",
-       "orcid": "0000-0000-0000-0000"
-     }
-   ]
-   ```
+4. **ORCID identifiers already configured**: The repository now includes ORCID `0009-0006-0148-204X` in:
+   - `.zenodo.json` creators section
+   - `CITATION.cff` authors section
+   - `codemeta.json` author section
+   
+5. **Zenodo community configured**: The repository is configured to publish to the `biophysics` community on Zenodo.
 
 ### Step 2: Create GitHub Release
 
