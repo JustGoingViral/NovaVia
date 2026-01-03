@@ -99,3 +99,6 @@ demo_output/
 # Stray files (prevent accidental commits)
 *%
 *.percentage
+
+# Snapshot generation script (temporary)
+create_snapshot.py
